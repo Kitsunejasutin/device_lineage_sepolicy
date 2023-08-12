@@ -42,3 +42,9 @@ endif
 ifeq ($(PRODUCT_IS_ATV), true)
 include device/lineage/sepolicy/atv/sepolicy.mk
 endif
+
+# google_battery service
+ifeq ($(TARGET_NOT_SUPPORTS_GOOGLE_BATTERY), true)
+BOARD_VENDOR_SEPOLICY_DIRS += \
+    hardware/google/pixel-sepolicy/googlebattery
+endif
